@@ -14,7 +14,7 @@
 /// As of september 15, 2022 ETH is proof of work
 /// PoW uses a lot of energy
 /// PoW we call it miners and in PoS we call it validators
-/// Layer 1: Base leyer blockchain implementation ( BTC, ETH, AVAX etc )
+/// Layer 1: Base layer blockchain implementation ( BTC, ETH, AVAX etc )
 /// Layer 2: Any Application built on top of layer 1 ( Chailink, ARBITRIUM, OP )
 /// Rollups derive their security from base layer
 /// Side chains derive their security from their own protocols
