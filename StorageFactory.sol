@@ -4,16 +4,26 @@ pragma solidity ^0.8.19; // version
 
 import "./SimpleStorage.sol";
 
-// This contract has a function which can deploy other contracts :)
 // Contract Storage Storage
 contract StorageFactory {
 
     // type visibility variableName
-    SimpleStorage public simpleStorage;
+    SimpleStorage[] public listOfContracts;
 
     // a function to deploy Simple Storage Contract
     function deploySimpleStorage() public {
-        simpleStorage = new SimpleStorage();
+        SimpleStorage newSimpleStorage = new SimpleStorage();
+        listOfContracts.push(newSimpleStorage);
     }
 
+    // Set Fav Number from this contract in Simple Storage var
+    function setFavNumber(uint256 _simpleStorageIndex, uint256 _newSimpleStorageNumber) public {
+        // get instance of the contract and set fav number
+        listOfContracts[_simpleStorageIndex].setFavoriteNumber(_newSimpleStorageNumber);
+    }
+
+    // get the fav number from Simple Storage contract
+    function getFavNumber(uint256 _simpleStorageIndex) public view returns(uint256) {
+        return listOfContracts[_simpleStorageIndex].getFN();
+     }
 }
