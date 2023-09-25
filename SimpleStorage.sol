@@ -7,7 +7,7 @@ contract SimpleStorage {
     // if you don't specifiy visibility specifier the default will be internal
     uint256 public favoriteNumber; // deafult value for uint256 is zero
 
-    // let's define a custom var
+    // let's define a custom varsetFavoriteNumber
     struct Person {
         string name;
         uint256 fNumber;
@@ -19,7 +19,7 @@ contract SimpleStorage {
     // let's play with mappings
     mapping (string => uint256) public nameToFavoriteNumber;
 
-    function setFavoriteNumber(uint256 _favoriteNumber) public {
+    function setFavoriteNumber(uint256 _favoriteNumber) public virtual {
         favoriteNumber = _favoriteNumber;
     }
 
